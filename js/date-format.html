@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CrossKnowledge - Code challenge</title>
+</head>
+<body>
+  <div id="new">
+  </div>
+  <script>
+    // This will create elements for testing, DO NOT change this code
+	/*
+    (() => {
+      const MS_PER_MINUTE = 60000
+      const NOW = new Date()
+      let minutes = [0, 1, 30, 60, 6 * 60, 23 * 60, 24 * 60]
+      let dates = []
+
+      minutes.forEach((i) => dates.push(new Date(NOW - i * MS_PER_MINUTE)))
+	
+	  //console.log(dates);
+	  
+      dates.forEach((item) => {
+        let el = document.createElement("div")
+        el.innerHTML = "Started "
+
+        let dt = document.createElement('span')
+        dt.className = 'js-date-format'
+        dt.innerHTML = item.toISOString()
+        el.appendChild(dt)
+        document.body.appendChild(el)
+      })
+    })();
+	*/
+	
+	isPlural = (val, string) => val == 1 ? string : `${string}s`;
+	
+	timeSince = (date) => {
+
+	  const seconds = Math.floor((new Date() - date) / 1000);
+	  //var interval = seconds / 31536000;
+	  let interval = seconds / 86400;
+
+	  if (interval > 1) {
+	  		return date.toISOString();
+		return Math.floor(interval) + " days";
+	  }
+	  
+	  interval = seconds / 3600;
+	  if (interval > 1) {
+		return Math.floor(interval) + " hours";
+	  }
+	  
+	  interval = seconds / 60;
+	  if (interval > 1) {
+		return Math.floor(interval) + " minutes";
+	  }
+	  return Math.floor(seconds) + ' ' + isPlural(Math.floor(seconds), 'Second') + ' ago';
+	}
+	
+	//var aDay = 24*60*60*1000;
+	//console.log(timeSince(new Date(Date.now()-aDay)));
+	//console.log(timeSince(new Date(Date.now()-aDay*2)));
+	
+	getTimes = () => {
+	  const MS_PER_MINUTE = 60000;
+      const NOW = new Date();
+      let minutes = [0, 1, 30, 60, 6 * 60, 23 * 60, 24 * 60];
+      let dates = [];
+
+      minutes.forEach((i) => dates.push(new Date(NOW - i * MS_PER_MINUTE)));
+	  return dates;
+	}
+	
+	sortTime = dates =>{
+		console.log(1);
+		
+		document.getElementById("new").innerHTML = "";
+		dates.forEach((item) => {
+			let el = document.createElement("div");
+			el.innerHTML = "Started "
+
+			let dt = document.createElement('span')
+			dt.className = 'js-date-format';
+			dt.innerHTML = timeSince(item);//.toISOString()
+			el.appendChild(dt)
+			document.getElementById("new").appendChild(el)
+        })
+	  
+	}
+	
+	
+	(() => {
+	  const dates = getTimes();
+	  setInterval(() => sortTime(dates), 1000);
+	})();
+
+  </script>
+</body>
+</html>

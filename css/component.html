@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CrossKnowledge - Code challenge</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"> 
+  <style>
+	body{
+		margin: 0 auto;
+	}
+	.article{
+		margin:5px;
+		border:1px solid #ccc;
+		max-width:322px;
+		padding:0px;
+		font-family:roboto;
+		background-color: #f2f2f2;
+	}
+	
+	.article__header{
+		text-align:left;
+		padding:5px;
+	}
+	
+	.article__title{
+		font-weight:600;
+		font-size:0.9em;
+		margin-bottom:10px;
+	}
+	
+	.article__duration{
+		font-size:0.7em;
+	}
+	
+	.article__right{	
+		float: right;
+		font-size:0.8em;
+		font-weight:500;
+		margin-top:-35px;
+		display:flex;	
+	}
+	.article__right *{
+	   margin-top:auto;	
+ 	   margin-bottom:auto;
+	}
+	
+	.article__icon{
+		width:20px;
+		margin-left:5px;
+	}
+	
+	.article__body{
+		text-align:center;
+	}
+	.article__img{
+		margin-left:-1px;
+	}
+	.article_cta{
+		border: 2px solid #fff;
+		background-color: #ccc;
+		border-radius: 20px;
+		padding: 10px 50px;
+		color: rgb(42, 42, 42);
+		text-decoration: none;
+		position: absolute;
+		margin-top:-60px;
+		margin-left:-10%;
+		font-weight: 500;
+	}
+
+	.article__footer{
+		padding:5px;
+		color: #666;
+	}
+
+  </style>
+</head>
+<body>
+  <article class="article">
+    <header class="article__header">
+      <div>
+        <div class="article__title">
+          Avengers: Infinity War
+        </div>
+        <div class="article__duration">
+          156 minutes
+        </div>
+      </div>
+      <div class="article__right">
+        <span>85%</span> <img class="article__icon" src="https://www.rottentomatoes.com/assets/pizza-pie/images/icons/global/cf-lg.3c29eff04f2.png" alt="">
+      </div>
+    </header>
+
+    <div class="article__body">
+      <img src="https://i.ibb.co/9tLcR7s/avengers.jpg" class="article__img">
+      <a href="https://www.rottentomatoes.com/m/avengers_infinity_war" target="_blank" class="article_cta">
+        Check review
+      </a>
+    </div>
+
+    <footer class="article__footer">
+      <p class="article__desc">
+        An unprecedented cinematic journey ten years in the making and spanning the entire Marvel Cinematic Universe, Marvel Studios' "Avengers: Infinity War" brings to the screen the ultimate, deadliest showdown of all time. The Avengers and their Super Hero allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe. 
+      </p>
+    </footer>
+  </article>
+  
+</body>
+</html>
