@@ -38,30 +38,27 @@
 	timeSince = (date) => {
 
 	  const seconds = Math.floor((new Date() - date) / 1000);
-	  //var interval = seconds / 31536000;
+
 	  let interval = seconds / 86400;
 
 	  if (interval > 1) {
 	  		return date.toISOString();
-		return Math.floor(interval) + " days";
+		return Math.floor(interval) + ' ' + isPlural(Math.floor(interval), 'Hour') + ' ago';
 	  }
 	  
 	  interval = seconds / 3600;
 	  if (interval > 1) {
-		return Math.floor(interval) + " hours";
+		return Math.floor(interval) + ' ' + isPlural(Math.floor(interval), 'Day') + ' ago';
 	  }
 	  
 	  interval = seconds / 60;
 	  if (interval > 1) {
-		return Math.floor(interval) + " minutes";
+		return Math.floor(interval) + ' ' + isPlural(Math.floor(interval), 'Minute') + ' ago';
 	  }
+
 	  return Math.floor(seconds) + ' ' + isPlural(Math.floor(seconds), 'Second') + ' ago';
 	}
-	
-	//var aDay = 24*60*60*1000;
-	//console.log(timeSince(new Date(Date.now()-aDay)));
-	//console.log(timeSince(new Date(Date.now()-aDay*2)));
-	
+		
 	getTimes = () => {
 	  const MS_PER_MINUTE = 60000;
       const NOW = new Date();
